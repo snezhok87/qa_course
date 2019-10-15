@@ -1,0 +1,9 @@
+package com.go2it.edu.lecture2.datatypes;
+
+public class Boolean {
+    public static void main(String[] args) {
+        int a=1;
+        int b=2;
+        System.out.println("a != b -" + (a == b));
+    }
+}
