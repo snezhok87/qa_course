@@ -1,21 +1,34 @@
 package com.go2it.edu.lecture2.conditions;
 // Task 2.3.           Alex|qwertY1
+//                     0123
+
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
+import java.sql.SQLOutput;
 
 public class SplitCredentialsUsernamePassword {
-        public static void main(String[] args) {
-        String username = "Alex";
-        String password = "qwertY1";
-        String userInput;
+    public static void main(String[] args) {
+        String credentials = args[0] + "|" + args[1];
+        String correctUsername = "Alex";
+        String correctPassword = "qwertY1";
+        int usernameIndex = credentials.indexOf(correctUsername);
+        int passwordIndex = credentials.indexOf(correctPassword);
+        int pipeIndex = credentials.indexOf("|");
+//        System.out.println(usernameIndex);
+//        System.out.println(passwordIndex);
+//        System.out.println(pipeIndex);
 
-        if (username.indexOf(args[0]) {
-            username = args[0].substring(0, 5);
+        String username = credentials.substring(usernameIndex, pipeIndex);
+        String password = credentials.substring(passwordIndex);
+
+//        System.out.println(username);
+//        System.out.println(password);
+
+        if (username.equals(correctUsername) && password.equals(correctPassword)) {
+           System.out.println("Welcome, " + username);
+       } else {
+            System.out.println("Incorrect username/password ");
         }
-        if (password.indexOf(args[0]) {
-                password = args[0].substring(5, 12);
-                userInput = in.nextLine();
-                System.out.println("Welcome, " + userInput);
-        } else {
-            System.out.println("Incorrect username or password. ");
-        }
+
     }
 }
