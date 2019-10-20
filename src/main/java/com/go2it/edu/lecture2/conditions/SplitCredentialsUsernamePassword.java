@@ -2,10 +2,6 @@ package com.go2it.edu.lecture2.conditions;
 // Task 2.3.           Alex|qwertY1
 //                     0123
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
-import java.sql.SQLOutput;
-
 public class SplitCredentialsUsernamePassword {
     public static void main(String[] args) {
         String credentials = args[0] + "|" + args[1];
