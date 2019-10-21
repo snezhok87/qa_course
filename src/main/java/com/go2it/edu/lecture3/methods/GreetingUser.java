@@ -10,8 +10,8 @@ public class GreetingUser {
         return "Hello, " + userName;
     }
 
-    public static void printGreeting(String greeting){ ;
-                System.out.println(greeting);
+    public static void printGreeting(String greeting) {
+        System.out.println(greeting);
     }
 
 }
