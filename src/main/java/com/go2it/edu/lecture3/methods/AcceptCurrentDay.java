@@ -11,8 +11,7 @@ public class AcceptCurrentDay {
     public static void main(String[] args) {
         LocalDate currentDay = LocalDate.now();
         DayOfWeek dayOfWeek = currentDay.getDayOfWeek();
-        daysofweek(dayOfWeek.toString());
-
+//        printLeftTillWeekend(daysofweek(dayOfWeek.toString());
     }
 
     public static void printLeftTillWeekend(String day) {
@@ -37,11 +36,7 @@ public class AcceptCurrentDay {
                 System.out.println("There are " + number + " days till the weekend ");
                 break;
             }
-            case "FRIDAY": {
-                int number = 0;
-                System.out.println("There are " + number + " days till the weekend ");
-                break;
-            }
+            case "FRIDAY":
             case "SUNDAY": {
                 int number = 0;
                 System.out.println("There are " + number + " days till the weekend ");
@@ -55,38 +50,25 @@ public class AcceptCurrentDay {
         switch (day) {
             case "MONDAY": {
                 daysLeft = new String[]{"Tuesday", "Wednesday", "Thursday", "Friday"};
-                int number = 4;
-                System.out.println("There are " + number + " days till the weekend ");
                 break;
             }
             case "TUESDAY": {
                 daysLeft = new String[]{"Wednesday", "Thursday", "Friday"};
-                int number = 3;
-                System.out.println("There are " + number + " days till the weekend ");
                 break;
             }
             case "WEDNESDAY": {
-                daysLeft = new String[]{};
-                int number = 2;
-                System.out.println("There are " + number + " days till the weekend ");
+                daysLeft = new String[]{"Thursday", "Friday"};
                 break;
             }
             case "THURSDAY": {
-                daysLeft = new String[]{};
-                int number = 1;
-                System.out.println("There are " + number + " days till the weekend ");
+                daysLeft = new String[]{"Friday"};
                 break;
             }
-            case "FRIDAY": {
-                daysLeft = new String[]{};
-                int number = 0;
-                System.out.println("There are " + number + " days till the weekend ");
-                break;
-            }
+            case "FRIDAY":
+            case "SATURDAY":
             case "SUNDAY": {
                 daysLeft = new String[]{};
                 int number = 0;
-                System.out.println("There are " + number + " days till the weekend ");
                 break;
             }
         }
