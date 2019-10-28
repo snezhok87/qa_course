@@ -11,26 +11,30 @@ public class OverLoading {
 //        String day = dayOfWeek.toString();
 
 
-//        String day = "MONDAY";
+        String day = "MONDAY";
 //        String day = "TUESDAYS";
 //        String day = "WEDNESDAY";
 //        String day = "FRIDAY";
 //        String day = "SATURDAY";
-//        System.out.println(day);
-        //       int daysOff = Integer.parseInt(args[0]);
-        String[] weekDays = new String[]{"MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"};
-        int[] daysOff = new int[] {1, 2, 3, 4};
-        for (String weekDay: weekDays) {
-            System.out.println();
-            for (int dayoff: daysOff) {
-                System.out.println(String.format("Verifying day %s and dayoff %d", weekDay, dayoff));
-                printLeftTillWeekend(weekDay, dayoff);
-            }
-        }
+        System.out.println(day);
+        printLeftTillWeekend("MONDAY", 4);
+
+
+//        String[] weekDays = new String[]{"MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"};
+//        int[] daysOff = new int[] {1, 2, 3, 4};
+//        for (String weekDay: weekDays) {
+//            System.out.println();
+//            for (int dayoff: daysOff) {
+//                System.out.println(String.format("Verifying day %s and dayoff %d", weekDay, dayoff));
+//                printLeftTillWeekend(weekDay, dayoff);
+//            }
+//        }
+
+    }
+    public static void printLeftTillWeekend(String dayOfWeek){
 
     }
 
-    //daysLeft = new String[]{"Tuesday ", "Wednesday", "Thursday", "Friday"};
     public static void printLeftTillWeekend(String dayOfWeek, int daysOff) {
         String[] daysleft = daysofweek(dayOfWeek);
         int i = daysleft.length - daysOff;

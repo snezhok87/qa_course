@@ -31,8 +31,9 @@ public class CalculatorDivideByZero {
 
         switch (operation) {
             case DIVISION: {
-                if (x==0 && y==0)
+                if (x==0 && y==0) {
                     throw new IllegalArgumentException("Digits should not be equal to zero ");
+                }
                 System.out.println();
                 int result = x / y;
                 String output = "The result of division is: " + result;

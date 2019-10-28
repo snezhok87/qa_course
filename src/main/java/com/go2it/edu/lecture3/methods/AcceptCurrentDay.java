@@ -15,9 +15,10 @@ public class AcceptCurrentDay {
         String day = dayOfWeek.toString();
         System.out.println(day);
 
-        printLeftTillWeekend(day);
-        String[] daysofweek = daysofweek(day);
-        System.out.println(Arrays.toString(daysofweek));
+ //       printLeftTillWeekend(day);
+//        String[] daysofweek = daysofweek(day);
+//        System.out.println(Arrays.toString(daysofweek));
+        printLeftTillWeekend("MONDAY", 3);
 
     }
 
@@ -49,6 +50,18 @@ public class AcceptCurrentDay {
                 System.out.println("There are " + number + " days till the weekend ");
                 break;
             }
+        }
+    }
+
+//Task 3.6. Overload task 3.5.
+
+    public static void printLeftTillWeekend(String dayOfWeek, int daysOff) {
+        String[] daysleft = daysofweek(dayOfWeek);
+        int i = daysleft.length - daysOff;
+        if (daysleft.length < daysOff) {
+            System.out.println("Your days till weekend less then days off you want to take");
+        } else {
+            System.out.println("I will take " + daysOff + " days off this week, so my weekend will start " + daysOff + " days earlier - on " + daysleft[i]);
         }
     }
 
