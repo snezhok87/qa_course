@@ -17,6 +17,8 @@ public class CalculatorDivideByZero {
         int y = Integer.parseInt(args[1]);
         MathematicalOperations operation = MathematicalOperations.valueOf(args[2]); // declare variable 'Operation' from class enum and program arguments
         calculate(x, y, operation);
+
+
         //          calculate(x,y, MathematicalOperations.MULTIPLICATION);
         //     this for using enum class
     }
@@ -29,6 +31,9 @@ public class CalculatorDivideByZero {
 
         switch (operation) {
             case DIVISION: {
+                if (x==0 && y==0)
+                    throw new IllegalArgumentException("Digits should not be equal to zero ");
+                System.out.println();
                 int result = x / y;
                 String output = "The result of division is: " + result;
                 System.out.println(output);
