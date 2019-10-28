@@ -5,8 +5,7 @@ public class EnumExamples {
     public static void main(String[] args) {
 
         //System.out.println(DaysWeek.valueOf(args[0]));
-        String day = args[0];
-        DaysWeek dayofweek = DaysWeek.valueOf(day);
+        DaysWeek dayofweek = DaysWeek.valueOf(args[0]);
         System.out.println(dayofweek);
 
         int orderNumber = dayofweek.getOrderNumber();

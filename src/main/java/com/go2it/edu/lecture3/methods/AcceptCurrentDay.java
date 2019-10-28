@@ -6,12 +6,19 @@ package com.go2it.edu.lecture3.methods;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class AcceptCurrentDay {
     public static void main(String[] args) {
         LocalDate currentDay = LocalDate.now();
         DayOfWeek dayOfWeek = currentDay.getDayOfWeek();
-//        printLeftTillWeekend(daysofweek(dayOfWeek.toString());
+        String day = dayOfWeek.toString();
+        System.out.println(day);
+
+        printLeftTillWeekend(day);
+        String[] daysofweek = daysofweek(day);
+        System.out.println(Arrays.toString(daysofweek));
+
     }
 
     public static void printLeftTillWeekend(String day) {

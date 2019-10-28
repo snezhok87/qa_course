@@ -19,7 +19,6 @@ public class CorrespondingMethod {
 
     public static int[] initializedArray() {
         int[] oddValues = new int[100];
-        int x = 0;
         for (int i = 0; i < oddValues.length; i++) {
             oddValues[i] = 2 * i + 1;
         }
