@@ -7,9 +7,7 @@ package com.go2it.edu.lecture3.methods;
 // 33, 6,  “DIVISION” are passed in, method must print “The result of division is 11”
 // 27, 23, “SUBTRACTION” are passed in, method must print “The result of subtraction is 4”
 
-//  а что будет если мы передадим в операцию деления два нуля в качестве аргументов?
-//Этот сценарий (а точнее значение одного аргументам) лучше перехватить перед выполнением деления
-// (посмотри как IllegalArgumentException можно throw)
+
 
 public class CalculatorDivideByZero {
     public static void main(String[] args) {
@@ -28,7 +26,9 @@ public class CalculatorDivideByZero {
     }
 
     public static void calculate(int x, int y, MathematicalOperations operation) {
-
+//  а что будет если мы передадим в операцию деления два нуля в качестве аргументов?
+//Этот сценарий (а точнее значение одного аргументам) лучше перехватить перед выполнением деления
+// (посмотри как IllegalArgumentException можно throw)
         switch (operation) {
             case DIVISION: {
                 if (x==0 && y==0) {
