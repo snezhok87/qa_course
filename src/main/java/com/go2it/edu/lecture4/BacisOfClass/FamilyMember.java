@@ -5,40 +5,31 @@ import java.time.LocalDate;
 public class FamilyMember {
 
     private String name;
-    private LocalDate dateOfBirth = LocalDate.now(); // int
+    private LocalDate dateOfBirth;
     private int roomNumber;
     private String favoriteDish;
 
-    public String getName() {
-        return this.name;
+    public FamilyMember(String name, LocalDate dateOfBirth, int roomNumber, String favoriteDish){
+        this.name = name;
+        this.dateOfBirth = LocalDate.now();
+        this.roomNumber= roomNumber;
+        this.favoriteDish=favoriteDish;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
     public LocalDate getDateOfBirth() {
-        return this.dateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+        return dateOfBirth;
     }
 
     public int getRoomNumber() {
-        return this.roomNumber;
-    }
-
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
+        return roomNumber;
     }
 
     public String getFavoriteDish() {
-        return this.favoriteDish;
-    }
-
-    public void setFavoriteDish(String favoriteDish) {
-        this.favoriteDish = favoriteDish;
+        return favoriteDish;
     }
 
     public void eat(String dish) {

@@ -27,34 +27,18 @@ public class Main {
         myDog.run(false);
         myDog.play(Dog.ToysToPlay.BALL);
 
-        FamilyMember father = new FamilyMember();
-        father.setName("Dan");
-        father.setDateOfBirth(LocalDate.now());
-        father.setRoomNumber(2);
-        father.setFavoriteDish("Chicken and salad ");
+        FamilyMember father = new FamilyMember("Dan", LocalDate.of(1983,10,5),2,"Chicken and salad ");
         System.out.println("Father's name is " + father.getName()+ " and he lives in room: " + father.getRoomNumber());
         father.eat("Chips");
 
-        FamilyMember mother = new FamilyMember();
-        mother.setName("Jesica");
-        mother.setDateOfBirth(LocalDate.now());
-        mother.setRoomNumber(5);
-        mother.setFavoriteDish("Shrimp and rice ");
+        FamilyMember mother = new FamilyMember("Jesica", LocalDate.of(1987,5,25), 5,"Shrimp and rice " );
         System.out.println("My mom was born: " + mother.getDateOfBirth());
         mother.listen();
 
-        FamilyMember daughter = new FamilyMember();
-        daughter.setName("Anna");
-        daughter.setDateOfBirth(LocalDate.now());
-        daughter.setRoomNumber(3);
-        daughter.setFavoriteDish("Borsh ");
+        FamilyMember daughter = new FamilyMember("Anna", LocalDate.of(2010,3,2), 3, "Borsh ");
         daughter.callAnotherFamilyMember("Jack");
 
-        FamilyMember dog = new FamilyMember();
-        dog.setName("Jack");
-        dog.setDateOfBirth(LocalDate.now());
-        dog.setRoomNumber(7);
-        dog.setFavoriteDish("Bone ");
+        FamilyMember dog = new FamilyMember("Jack", LocalDate.of(2018,11,25),7,"Bone ");
         dog.goAsleep();
     }
 
