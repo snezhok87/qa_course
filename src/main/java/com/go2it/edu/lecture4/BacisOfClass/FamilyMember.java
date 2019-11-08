@@ -33,7 +33,7 @@ public class FamilyMember {
     }
 
     public void eat(String dish) {
-        if (dish.equals(favoriteDish)){
+        if (dish.equals(favoriteDish)) {
             System.out.println("This is my favourite dish: " + favoriteDish);
         } else {
             System.out.println("I am eating " + dish);

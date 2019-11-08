@@ -18,14 +18,23 @@ public class Main {
 //        cruiseLiner.setHasSail(false);
 //        System.out.println("Cruise Liner: " + cruiseLiner.getTitle() + " , does it have sail - " + cruiseLiner.isHasSail());
 
-        Dog puppyDog = new Dog("white", 14, true, "Poodle");
-        System.out.println("My dog has " + puppyDog.getTeeth() + " teeth");
-        puppyDog.sleep(5);
-        Dog myDog = new Dog("brown", 20, true, "Broholmer");
+        Dog americanLeopard = new Dog("white", 14, true, "Poodle", "male",4);
+        System.out.println("My dog has " + americanLeopard.getTeeth() + " teeth");
+        americanLeopard.sleep(5);
+
+        Dog myDog = new Dog("brown", 20, true, "Broholmer", "female",4);
         System.out.println("My dog is " + myDog.getColor() + " color");
         myDog.sleep(10);
         myDog.run(false);
         myDog.play(Dog.ToysToPlay.BALL);
+
+        Dog poodle = new Dog ("female", "Poodle");
+        poodle.play(Dog.ToysToPlay.STICK);
+        poodle.setColor("white");
+        System.out.println("The color of poodle is " + poodle.getColor());
+
+        Dog puppyCollie = new Dog("female","Collie", 30);
+        System.out.println("My puppy has " + puppyCollie.getTeeth() + " teeth");
 
         FamilyMember father = new FamilyMember("Dan", LocalDate.of(1983,10,5),2,"Chicken and salad ");
         System.out.println("Father's name is " + father.getName()+ " and he lives in room: " + father.getRoomNumber());
