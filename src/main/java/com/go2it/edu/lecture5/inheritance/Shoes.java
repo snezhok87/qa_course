@@ -1,4 +1,4 @@
-package com.go2it.edu.lecture5;
+package com.go2it.edu.lecture5.inheritance;
 
 public class Shoes {
     private int size;
@@ -6,14 +6,15 @@ public class Shoes {
     private String brand;
     private Double price;
 
-    public Shoes(){  //default construction
-
+    public Shoes() {  //default construction
+        System.out.println("Creating Shoes with parameters");
     }
 
-    public Shoes(int size, String material, Double price){
+    public Shoes(int size, String material, Double price) {
         this.size = size;
         this.material = material;
         this.price = price;
+        System.out.println("Constructor of Shoes");
     }
 
     public int getSize() {

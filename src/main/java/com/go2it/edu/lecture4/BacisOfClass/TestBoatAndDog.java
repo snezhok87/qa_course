@@ -2,7 +2,7 @@ package com.go2it.edu.lecture4.BacisOfClass;
 
 import java.time.LocalDate;
 
-public class Main {
+public class TestBoatAndDog {
     public static void main(String[] args) {
 //        Boat smallYacht = new Boat();// 3 way- constructor
 //
@@ -18,37 +18,23 @@ public class Main {
 //        cruiseLiner.setHasSail(false);
 //        System.out.println("Cruise Liner: " + cruiseLiner.getTitle() + " , does it have sail - " + cruiseLiner.isHasSail());
 
-        Dog americanLeopard = new Dog("white", 14, true, "Poodle", "male",4);
+        Dog americanLeopard = new Dog("white", 14, true, "Poodle", "male", 4);
         System.out.println("My dog has " + americanLeopard.getTeeth() + " teeth");
         americanLeopard.sleep(5);
 
-        Dog myDog = new Dog("brown", 20, true, "Broholmer", "female",4);
+        Dog myDog = new Dog("brown", 20, true, "Broholmer", "female", 4);
         System.out.println("My dog is " + myDog.getColor() + " color");
         myDog.sleep(10);
         myDog.run(false);
         myDog.play(Dog.ToysToPlay.BALL);
 
-        Dog poodle = new Dog ("female", "Poodle");
+        Dog poodle = new Dog("female", "Poodle");
         poodle.play(Dog.ToysToPlay.STICK);
         poodle.setColor("white");
         System.out.println("The color of poodle is " + poodle.getColor());
 
-        Dog puppyCollie = new Dog("female","Collie", 30);
+        Dog puppyCollie = new Dog("female", "Collie", 30);
         System.out.println("My puppy has " + puppyCollie.getTeeth() + " teeth");
 
-        FamilyMember father = new FamilyMember("Dan", LocalDate.of(1983,10,5),2,"Chicken and salad ");
-        System.out.println("Father's name is " + father.getName()+ " and he lives in room: " + father.getRoomNumber());
-        father.eat("Chips");
-
-        FamilyMember mother = new FamilyMember("Jesica", LocalDate.of(1987,5,25), 5,"Shrimp and rice " );
-        System.out.println("My mom was born: " + mother.getDateOfBirth());
-        mother.listen();
-
-        FamilyMember daughter = new FamilyMember("Anna", LocalDate.of(2010,3,2), 3, "Borsh ");
-        daughter.callAnotherFamilyMember("Jack");
-
-        FamilyMember dog = new FamilyMember("Jack", LocalDate.of(2018,11,25),7,"Bone ");
-        dog.goAsleep();
     }
-
 }
