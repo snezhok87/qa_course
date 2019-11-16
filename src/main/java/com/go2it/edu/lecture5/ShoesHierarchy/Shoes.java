@@ -1,4 +1,4 @@
-package com.go2it.edu.lecture5.inheritance;
+package com.go2it.edu.lecture5.ShoesHierarchy;
 
 public class Shoes {
     private int size;

@@ -38,6 +38,10 @@ public class Dog {
         this.paws = paws;
     }
 
+    public Dog(){
+
+    }
+
     //the main  constructor for healthy brown dog
     public Dog(String gender, String breed) {
         this.gender = gender;

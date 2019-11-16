@@ -11,7 +11,7 @@ public class FamilyMember {
 
     public FamilyMember(String name, LocalDate dateOfBirth, int roomNumber, String favoriteDish){
         this.name = name;
-        this.dateOfBirth = LocalDate.now();
+        this.dateOfBirth = dateOfBirth;
         this.roomNumber= roomNumber;
         this.favoriteDish=favoriteDish;
     }
