@@ -1,7 +1,5 @@
 package com.go2it.edu.lecture5.FurnitureHierarchy;
 
-import javax.swing.*;
-
 public class Product {
     private int price;
     private String color;

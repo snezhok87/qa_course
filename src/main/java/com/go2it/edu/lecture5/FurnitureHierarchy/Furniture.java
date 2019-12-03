@@ -25,17 +25,17 @@ public class Furniture extends Product {
             System.out.println("This furniture will assemble " + assemblyTime + " hours");
         }
     }
-//    @Override
-//    public String toString(){
-//
-//        return "This is FURNITURE with Values: year of produce " + yearOfProduce;
-//    }
-
     @Override
-    public String toString() {
-        return "Furniture{" +
-                "style='" + style + '\'' +
-                ", yearOfProduce=" + yearOfProduce +
-                '}';
+    public String toString(){
+
+        return "This is FURNITURE with Values: year of produce " + yearOfProduce;
     }
+
+//    @Override
+//    public String toString() {
+//        return "Furniture{" +
+//                "style='" + style + '\'' +
+//                ", yearOfProduce=" + yearOfProduce +
+//                '}';
+//    }
 }
