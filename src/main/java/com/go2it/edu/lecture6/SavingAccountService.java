@@ -20,6 +20,12 @@ public class SavingAccountService {
         return null;
     }
 
+    public void addMoneyToAccount(SavingAccount account, double cash) {
+        System.out.println("Money has been deposit  " + account);
+        double newBalance = account.getBalance() + cash;
+        System.out.println(" Now, the balance is: " + newBalance);
+    }
+
     public void closeSavingAccount(int periodForSavingAccount) {
         final int BANK_PERIOD = 365;
         if (periodForSavingAccount > BANK_PERIOD) {

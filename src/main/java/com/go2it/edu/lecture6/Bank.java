@@ -17,23 +17,24 @@ public class Bank {
         Person[] newFamilyMembers = customer.getFamilyMembers();
         System.out.println("Family members: " + Arrays.toString(newFamilyMembers));
 
-        Customer anotherCustomer = new Customer("Sveta", LocalDate.of(1980, 10, 15), true, familyMembers, 750, 12000);
-        anotherCustomer.addFamilyMember(daughter);
-        Person[] newFamilyMem = customer.getFamilyMembers();
-        System.out.println(customer.getName() + " has new family member: " + Arrays.toString(newFamilyMem));
-
-
         CreditCardService cardService = new CreditCardService();
         CreditCard tdCard = cardService.openCreditCard(customer, 2019, 4500, LocalDate.of(2022, 5, 30), 12345678);
         customer.addBankProduct(tdCard);
         System.out.println("This card get balance: " + tdCard.getBalance() + " and the name holder is: " + tdCard.getOwnerName());
 
-        CreditCard rbcCard = cardService.openCreditCard(customer, 2018, 1000.00, LocalDate.of(2018, 6, 25), 565655);
-        anotherCustomer.addBankProduct(rbcCard);
-
         SavingAccountService savingAccount = new SavingAccountService();
         SavingAccount allTimeMoney = savingAccount.openSavingAccount(customer, 2019, 3500, 2, 365);
         customer.addBankProduct(allTimeMoney);
+
+        Customer anotherCustomer = new Customer("Sveta", LocalDate.of(1980, 10, 15), true, familyMembers, 750, 12000);
+        anotherCustomer.addFamilyMember(daughter);
+        Person[] newFamilyMem = customer.getFamilyMembers();
+        System.out.println(customer.getName() + " has new family member: " + Arrays.toString(newFamilyMem));
+
+        CreditCard rbcCard = cardService.openCreditCard(customer, 2018, 1000.00, LocalDate.of(2018, 6, 25), 565655);
+        anotherCustomer.addBankProduct(rbcCard);
+        anotherCustomer.addBankProduct(tdCard);
+
 
         MortgageService mortgageService = new MortgageService();
         Mortgage homeLoan= mortgageService.applyMortgage(anotherCustomer, 2019, 1500,true, 25000, 365);
