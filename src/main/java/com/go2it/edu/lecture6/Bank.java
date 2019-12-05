@@ -22,23 +22,32 @@ public class Bank {
         customer.addBankProduct(tdCard);
         System.out.println("This card get balance: " + tdCard.getBalance() + " and the name holder is: " + tdCard.getOwnerName());
 
-        SavingAccountService savingAccount = new SavingAccountService();
-        SavingAccount allTimeMoney = savingAccount.openSavingAccount(customer, 2019, 3500, 2, 365);
-        customer.addBankProduct(allTimeMoney);
+        CreditCard rbcCard = cardService.openCreditCard(customer, 2018, 1000.00, LocalDate.of(2018, 6, 25), 565655);
+        customer.addBankProduct(rbcCard);
+
+        MortgageService mortgageService = new MortgageService();
+        mortgageService.openMortgage(customer,2019,2500500, 25);
+
 
         Customer anotherCustomer = new Customer("Sveta", LocalDate.of(1980, 10, 15), true, familyMembers, 750, 12000);
         anotherCustomer.addFamilyMember(daughter);
         Person[] newFamilyMem = customer.getFamilyMembers();
         System.out.println(customer.getName() + " has new family member: " + Arrays.toString(newFamilyMem));
 
-        CreditCard rbcCard = cardService.openCreditCard(customer, 2018, 1000.00, LocalDate.of(2018, 6, 25), 565655);
-        anotherCustomer.addBankProduct(rbcCard);
-        anotherCustomer.addBankProduct(tdCard);
+        SavingAccountService savingAccount = new SavingAccountService();
+        SavingAccount allTimeMoney = savingAccount.openSavingAccount(anotherCustomer, 2019, 3500, 2, 365);
+        savingAccount.addMoneyToAccount(allTimeMoney, 250);
+        anotherCustomer.addBankProduct(allTimeMoney);
 
+        CheckingAccountService checkingAccount = new CheckingAccountService();
+        CheckingAccount cheAc=checkingAccount.openCheckingAccount(anotherCustomer, 2019, 1000);
+        checkingAccount.depositMoneyToAccount(cheAc, 1000);
+        anotherCustomer.addBankProduct(cheAc);
 
-        MortgageService mortgageService = new MortgageService();
-        Mortgage homeLoan= mortgageService.applyMortgage(anotherCustomer, 2019, 1500,true, 25000, 365);
-        anotherCustomer.addBankProduct(homeLoan);
+        InvestmentAccountService investmentAccount= new InvestmentAccountService();
+        InvestmentAccount studyInvestment= investmentAccount.openInvestmentAccount(anotherCustomer, 2015, 2500.50);
+        investmentAccount.investMoney(anotherCustomer, 1000);
+        anotherCustomer.addBankProduct(studyInvestment);
     }
 
 }
