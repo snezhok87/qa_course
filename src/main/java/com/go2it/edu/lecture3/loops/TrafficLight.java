@@ -7,12 +7,13 @@ public class TrafficLight {
         String userInput;
         try (Scanner in = new Scanner(System.in)) {
             userInput = in.nextLine();
-            if (userInput.equals("green")){
+            if (userInput.equals("green")) {
                 System.out.println("The traffic light is green. Soon it will change to yellow. Driver can proceed");
             }
-            if (userInput.equals("red")){
+            else if(userInput.equals("red")){
                 System.out.println("The traffic light is red. Driver should stop and wait for green light");
-            }else{
+            }
+            else{
                 System.out.println(" Please enter another color");
             }
         }

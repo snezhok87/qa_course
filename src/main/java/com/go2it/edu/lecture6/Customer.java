@@ -7,6 +7,7 @@ public class Customer extends Person {
     private BankProduct[] bankProducts;
     private int creditScore;
     private int ownBalance;
+    private int salary;
 
     public Customer(String name, LocalDate dateOfBirth, boolean canadianResident, Person[] familyMembers, int creditScore, int ownBalance) {
         super(name, dateOfBirth, canadianResident);
@@ -38,6 +39,14 @@ public class Customer extends Person {
 
     public void setOwnBalance(int ownBalance) {
         this.ownBalance = ownBalance;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 
     public void addFamilyMember(Person newFamilyMember) {

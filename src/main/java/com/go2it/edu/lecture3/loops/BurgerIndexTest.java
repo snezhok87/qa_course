@@ -6,13 +6,14 @@ public class BurgerIndexTest {
     public static void main(String[] args) {
 
         CostOfLiving[] costOfLivings = {new CostOfLiving("Russia", 25000, 65.00, 3),
-                new CostOfLiving("Canada", 3500, 5.00, 2),
-                new CostOfLiving("USA", 4500, 3.50, 1)};
+                                        new CostOfLiving("Canada", 3500, 5.00, 2),
+                                        new CostOfLiving("USA", 4500, 3.50, 1)};
         System.out.println("Please enter the country name: ");
-//        boolean result = false;
+//        создаем переменную actualCountry и присваиваем  пустое значение;
         CostOfLiving actualCountry = null;
-
+//      используем класс Scanner
         Scanner in = new Scanner(System.in);
+// создаем переменную userInput  и присваем значение, кот ввел пользователь
         String userInput = in.nextLine();
 
         for (CostOfLiving cost : costOfLivings) {

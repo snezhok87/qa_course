@@ -28,6 +28,8 @@ public class SavingAccount extends BankProduct {
 
     @Override
     public String toString() {
-        return super.toString();
+       String result = " to this account " + this.getBalance();
+              return result;
     }
+
 }

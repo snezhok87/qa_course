@@ -31,10 +31,12 @@ public class CheckedException {
         try {
             if (!(age <= 99)) {
                 System.out.println("Age");
-                throw new IllegalArgumentException("The type of value is incorrect ");
+                throw new Exception("The type of value is incorrect ");
             }
-        }catch (IllegalArgumentException error){
-            System.out.println("Incorrect value : ");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new IllegalArgumentException(e);
         }
     }
 
