@@ -25,4 +25,9 @@ public class SavingAccount extends BankProduct {
     public void setPeriodForSavingAccount(int periodForSavingAccount) {
         this.periodForSavingAccount = periodForSavingAccount;
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

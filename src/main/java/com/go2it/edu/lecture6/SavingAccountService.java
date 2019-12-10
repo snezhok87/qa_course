@@ -21,7 +21,7 @@ public class SavingAccountService {
     }
 
     public void addMoneyToAccount(SavingAccount account, double cash) {
-        System.out.println("Money has been deposit  " + account);
+        System.out.println("Money has been deposited  " + account);
         double newBalance = account.getBalance() + cash;
         System.out.println(" Now, the balance is: " + newBalance);
     }

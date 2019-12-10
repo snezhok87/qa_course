@@ -12,8 +12,8 @@ public class Customer extends Person {
         super(name, dateOfBirth, canadianResident);
         this.familyMembers = familyMembers;
         this.creditScore = creditScore;
-        this.ownBalance= ownBalance;
-        //this.bankProducts = bankProducts;
+        this.ownBalance = ownBalance;
+        this.bankProducts = new BankProduct[0];
     }
 
     public Person[] getFamilyMembers() {
@@ -46,15 +46,23 @@ public class Customer extends Person {
             familyMembers[i] = this.familyMembers[i];
         }
         familyMembers[this.familyMembers.length] = newFamilyMember;
-        this.familyMembers=familyMembers;
+        this.familyMembers = familyMembers;
     }
 
+    // создаем метод добавить банковский продукт
     public void addBankProduct(BankProduct newBankProduct) {
-        BankProduct[] bankProducts= new BankProduct[this.bankProducts.length + 1];
-        for (int i = 0; i < this.bankProducts.length; i++){
+        // создаем переменную bankProducts и присваеваем ей новый массив класса BankProduct с размером старого массива + 1
+        BankProduct[] bankProducts = new BankProduct[this.bankProducts.length + 1];
+        // создаем цикл, где  переменной i присваивается значение 0, сравнивается с длинной массива bankProduct, и увеличивается на 1
+        for (int i = 0; i < this.bankProducts.length; i++) {
+            // ячейке нового массива bankProducts с индексом i присваивается i-й элемент (ячейка) существующего массива this.bankProducts
             bankProducts[i] = this.bankProducts[i];
-                    }
-        bankProducts[this.bankProducts.length] = newBankProduct;
+        }
+        // новую переменную newBankProduct присваиваю/копирую в последнюю ячейку нового массива bankProducts
+        // a <--- b
+        bankProducts[bankProducts.length - 1] = newBankProduct;
+        // новый массив bankProducts перезаписывает существующий this.bankProducts
+        // если не перезаписать, то новая переменная после выполнения метода исчезнет, т.к. ее область видимости завершится.
         this.bankProducts = bankProducts;
     }
 }
