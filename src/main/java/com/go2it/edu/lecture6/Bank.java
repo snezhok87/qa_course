@@ -1,5 +1,6 @@
 package com.go2it.edu.lecture6;
 
+
 import java.time.LocalDate;
 import java.util.Arrays;
 
@@ -26,7 +27,7 @@ public class Bank {
         customer.addBankProduct(rbcCard);
 
         MortgageService mortgageService = new MortgageService();
-        mortgageService.openMortgage(customer,2019,2500500, 25);
+        mortgageService.openMortgage(customer, 2019, 2500500, 25);
 
 
         Customer anotherCustomer = new Customer("Sveta", LocalDate.of(1980, 10, 15), true, familyMembers, 750, 12000);
@@ -40,14 +41,18 @@ public class Bank {
         anotherCustomer.addBankProduct(allTimeMoney);
 
         CheckingAccountService checkingAccount = new CheckingAccountService();
-        CheckingAccount cheAc=checkingAccount.openCheckingAccount(anotherCustomer, 2019, 1000);
+        CheckingAccount cheAc = checkingAccount.openCheckingAccount(anotherCustomer, 2019, 1000);
         checkingAccount.depositMoneyToAccount(cheAc, 1000);
         anotherCustomer.addBankProduct(cheAc);
 
-        InvestmentAccountService investmentAccount= new InvestmentAccountService();
-        InvestmentAccount studyInvestment= investmentAccount.openInvestmentAccount(anotherCustomer, 2015, 2500.50);
+        InvestmentAccountService investmentAccount = new InvestmentAccountService();
+        InvestmentAccount studyInvestment = investmentAccount.openInvestmentAccount(anotherCustomer, 2015, 2500.50);
         investmentAccount.investMoney(anotherCustomer, 1000);
         anotherCustomer.addBankProduct(studyInvestment);
-    }
 
+        CreditCard myCard = new CreditCard("Snezhana", 2019, 50.00, LocalDate.of(2022, 12, 28), 123456789);
+
+
+    }
 }
+

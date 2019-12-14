@@ -1,24 +1,16 @@
 package com.go2it.edu.lecture7.RuntimeException;
 
 public class CustomException extends Exception {
-    private String name;
-    private int age;
+    private int errorCode;
+    static int numberOfObjectCreated=0;
 
-    public CustomException(String message, Throwable cause, String name, int age) {
+    public CustomException(String message, Throwable cause, int errorCode) {
         super(message, cause);
-        this.name = name;
-        this.age = age;
+        this.errorCode = errorCode;
+        numberOfObjectCreated++;
     }
 
-    private String getName() {
-        return name;
-    }
-
-    private int getAge() {
-        return age;
-    }
-
-    private void setAge(int age) {
-        this.age = age;
+    public int getErrorCode() {
+        return errorCode;
     }
 }

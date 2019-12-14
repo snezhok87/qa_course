@@ -24,4 +24,5 @@ public class CreditCard extends BankProduct {
     public long getCreditLimit() {
         return creditLimit;
     }
+
 }

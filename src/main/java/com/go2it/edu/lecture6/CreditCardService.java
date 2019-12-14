@@ -14,25 +14,17 @@ public class CreditCardService {
         }
         return null;
 
-  //      final int INCOME_SALARY = 70000;
-  //      final int NUMBER_OF_CREDITCARD = 2;
+    }
 
- //       if (customer.isCanadianResident() && customer.getCreditScore() >= CREDIT_SCORE) {
-//            System.out.println("The new card has been opened for " + customer);
-  //          String name = customer.getName();
-    //        return new CreditCard(name, yearOfCreation, balance, expiredDate, cardNumber);
-//            how to add compare && >=NUMBER_OF_CREDITCARD
-//            if (customer.getSalary() >= INCOME_SALARY) {
-//                System.out.println("New credit card with 10000 limit was issued for " + customer + name);
-//            }
-//        } else {
-//
-//
-//        }
+    public void withdrawMoney(CreditCard card, double cash) {
 
-//        public void closeCreditCard() {
-//            System.out.println("Card was closed");
-//
-//        }
+        System.out.println("Money has been withdrawn from " + card);
+        double newBalance = card.getBalance() + cash;
+        System.out.println(" Now, the balance is: " + newBalance);
+    }
+
+    public void closeCreditCard() {
+        System.out.println("Card was closed");
+
     }
 }
