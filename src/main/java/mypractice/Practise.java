@@ -1,4 +1,4 @@
-package com.go2it.edu.lecture8.Collections;
+package mypractice;
 
 import java.util.ArrayList;
 import java.util.Arrays;

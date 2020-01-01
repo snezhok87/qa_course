@@ -1,13 +1,13 @@
 package com.go2it.edu.lecture8.Collections;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
 public class Person {
     private String name;
     private int age;
     private Gender gender;
-    private ArrayList<Person> familyMembers; // this is new property familyMembers of type ArrayList which can contain only Person
+    private List<Person> familyMembers; // this is new property familyMembers of type ArrayList which can contain only Person
 
     public enum Gender {
         FEMALE, MALE
@@ -20,13 +20,14 @@ public class Person {
         this.familyMembers = familyMembers;
     }
 
-    public Collection<Person> getFamilyMembers(){
+    public List<Person> getFamilyMembers() {
         return familyMembers;
     }
 
-    public void addFamilyMember (Person person){
+    public void addFamilyMember(Person person) {
         familyMembers.add(person); // this method will add new person to Array list of family members
-//        person.addFamilyMember(this);
+        if (!person.getFamilyMembers().contains(this))
+            person.addFamilyMember(this);
     }
 
     @Override
