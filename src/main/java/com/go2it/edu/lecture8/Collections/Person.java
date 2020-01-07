@@ -3,7 +3,7 @@ package com.go2it.edu.lecture8.Collections;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Person {
+public class  Person {
     private String name;
     private int age;
     private Gender gender;

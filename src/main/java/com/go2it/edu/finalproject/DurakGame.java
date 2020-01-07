@@ -1,27 +1,76 @@
 package com.go2it.edu.finalproject;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-
 public class DurakGame {
+    final static int CARDS_PER_PLAYER = 6;
+
     public static void main(String[] args) {
-        int cardsPerPlayer = 6;
-        int players = 4 ;
 
-        String[] suits = {"Пик", "Бубен", "Черв", "Треф"};
+        //1. Create and shuffle a deck
+        Deck deck = new Deck();
+        //  give a card for each player
+        Player[] players = {
+                new Player("Vasya"),
+                new Player("Dan"),
+                new Player("Kate"),
+                new Player("Sveta")
+        };
+        dealInitialCards(deck, players);
 
-        String[] rank = {"6", "7", "8", "9", "10", "Валет", "Королева", "Король", "Туз"};
-
-        int n = suits.length * rank.length; // количество карт в колоде (36)
-
-        ArrayList<Integer> cardGame = new ArrayList<>(36);
-        for (int i = 1; i <= 36; i++) {
-            cardGame.add(i);// will add cards from 1 to 36
+        for (Player player : players) {
+            System.out.println(player.getName() + " has " + player.getCards().size() + " cards: " + player.getCards());
         }
 
-        Collections.shuffle(cardGame);
-        System.out.println("The cards were shuffled");
+        int attackIndex = 0;
+        int defendIndex = 1;
+
+        Player attackingPlayer;
+        Player defendingPlayer;
+
+        do {
+            attackingPlayer = players[attackIndex];
+            defendingPlayer = players[defendIndex];
+            Card attackingCard = attackingPlayer.dropCardFromHand();
+            System.out.println(attackingPlayer + " goes with card " + attackingCard);
+
+            boolean isCardBeaten = defendingPlayer.defend(attackingCard);
+
+            if (isCardBeaten) {
+                attackIndex++; // index of player will increase
+                defendIndex++;
+            } else {
+                attackIndex = attackIndex + 2;
+                defendIndex = defendIndex + 2;
+            }
+            if (defendIndex == 4) {
+                defendIndex = 0;
+            }
+            if (attackIndex == 5) {
+                attackIndex = 1;
+            }
+            if (attackIndex == 4) {
+                attackIndex = 0;
+            }
+            if (defendIndex == 5) {
+                defendIndex = 1;
+            }
+
+            System.out.println();
+        } while (!attackingPlayer.getCards().isEmpty() && !defendingPlayer.getCards().isEmpty());
+
+        if (attackingPlayer.getCards().isEmpty() || defendingPlayer.getCards().isEmpty()) {
+            System.out.println("The winner is " + attackingPlayer );
+        }
     }
 
+    private static void dealInitialCards(Deck deck, Player[] players) {
+        for (int i = 1; i <= CARDS_PER_PLAYER; i++) {
+            // using for-each loop I will get each player
+            for (Player player : players) {
+                //2. Take a card from the top
+                Card card = deck.takeFromTop();
+                //3. Give the card to a player
+                player.addCardToHand(card);
+            }
+        }
+    }
 }
