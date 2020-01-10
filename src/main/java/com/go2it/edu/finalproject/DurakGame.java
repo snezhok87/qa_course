@@ -18,6 +18,7 @@ public class DurakGame {
 
         for (Player player : players) {
             System.out.println(player.getName() + " has " + player.getCards().size() + " cards: " + player.getCards());
+
         }
 
         int attackIndex = 0;
@@ -31,6 +32,7 @@ public class DurakGame {
             defendingPlayer = players[defendIndex];
             Card attackingCard = attackingPlayer.dropCardFromHand();
             System.out.println(attackingPlayer + " goes with card " + attackingCard);
+            System.out.println(attackingPlayer.getCards().size());
 
             boolean isCardBeaten = defendingPlayer.defend(attackingCard);
 
@@ -56,10 +58,11 @@ public class DurakGame {
 
             System.out.println();
         } while (!attackingPlayer.getCards().isEmpty() && !defendingPlayer.getCards().isEmpty());
+        System.out.println("The winner is " + (attackingPlayer.getCards().isEmpty() ? attackingPlayer : defendingPlayer));
 
-        if (attackingPlayer.getCards().isEmpty() || defendingPlayer.getCards().isEmpty()) {
-            System.out.println("The winner is " + attackingPlayer );
-        }
+//        if (attackingPlayer.getCards().isEmpty() || defendingPlayer.getCards().isEmpty()) {
+//            System.out.println("The winner is " + attackingPlayer );
+//        }
     }
 
     private static void dealInitialCards(Deck deck, Player[] players) {

@@ -33,23 +33,24 @@ public class Player {
 
     // other player defends, or takes card
     public boolean defend(Card attackingCard) {
-        boolean cardFound = false;
+//        boolean cardFound = false;
         for (int i = 0; i < cards.size(); i++) {
             Card defendingCard = cards.get(i);
             // compare attacking card and defending card
             if (attackingCard.getSuit() == defendingCard.getSuit() && defendingCard.getRank().value > attackingCard.getRank().value) {
-                cardFound = true;
+//                cardFound = true;
                 System.out.println(name + " beats " + attackingCard + " with " + defendingCard);
                 cards.remove(i); //defending player remove defending card
-                break;
+                return true;
+//                break;
             }
         }
-        if (!cardFound) {
-            cards.add(attackingCard); // attackingCard add to List<Card> of defending player
-            System.out.println(name + " cannot find a card to beat, so they take the card " + attackingCard);
-
-        }
-        return cardFound;
+//        if (!cardFound) {
+        cards.add(attackingCard); // attackingCard add to List<Card> of defending player
+        System.out.println(name + " cannot find a card to beat, so they take the card " + attackingCard);
+        return false;
+//        }
+//        return cardFound;
     }
 
     @Override
